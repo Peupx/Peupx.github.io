@@ -1,0 +1,234 @@
+/* ========================================================================== CONFIGURAÇÕES & VARIÁVEIS ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Roboto+Mono&display=swap');
+
+:root { 
+    --Background-color: #050505; 
+    --Primary: #008f68; 
+    --Text-color: #FFFFFF; 
+    --Text-fade: #777777; 
+    --Border-color: #ffffff3b; 
+    --Transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+    --Section-Padding: 140px 0; 
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body { background-color: var(--Background-color); font-family: "Poppins", sans-serif; color: var(--Text-color); line-height: 1.5; overflow-x: hidden; }
+a { text-decoration: none; }
+.Disabled { pointer-events: none;  cursor: default; opacity: 0.5;          text-decoration: none; color: inherit;
+}
+/* ========================================================================== COMPONENTES GLOBAIS ========================================================================== */
+.AboutMeContainer, .SkillsContainer, .ProjectsContainer, .EducationCarrerContainer, .ContactContainer, .FooterContainer { margin: 0 auto; width: 100%; max-width: 1000px; padding: 0 40px; }
+
+section { padding: var(--Section-Padding); }
+
+.ViewContainer { display: flex; align-items: center; gap: 20px; width: 100%; }
+.ViewLine { flex: 1; height: 1px; background-color: var(--Border-color); }
+.GreenText { color: var(--Primary); }
+.GreenTextBold { color: var(--Primary); font-weight: 700; }
+
+.ContactLink, .TabBtn {  text-transform: uppercase; letter-spacing: 3px; font-weight: 800; font-size: 0.9rem; transition: var(--Transition); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 12px; }
+
+/* ========================================================================== NAVEGAÇÃO ========================================================================== */
+header { width: 100%; position: sticky; top: 0; padding: 20px 0; background-color: rgba(5, 5, 5, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.03); z-index: 1000; }
+
+.NavLinks { display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+.SectionLinks { display: flex; list-style: none; }
+.SectionLinks a { color: var(--Text-fade); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; padding: 10px 15px; border-bottom: 2px solid transparent; transition: var(--Transition); }
+.SectionLinks a:hover { color: var(--Text-color); }
+.SectionLinks a.active { color: var(--Primary); border-bottom: 2px solid var(--Primary); }
+
+/* ========================================================================== HERO (ABOUT ME) ========================================================================== */
+#AboutMe { padding-top: 40px; min-height: 80vh; display: flex; align-items: center; justify-content: flex-start; }
+.AboutMeContainer { display: flex; align-items: center; gap: 60px; }
+
+.AboutMeIntro h2 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 600; line-height: 1.1; letter-spacing: -2px; margin-bottom: 15px; }
+.AboutMeIntro h3 { color: var(--Primary); font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; margin: -10px 0 20px 0; }
+.AboutMeText p { color: var(--Text-fade); margin-bottom: 40px; font-weight: 400; font-size: 1rem; max-width: 550px; }
+
+.AboutMeButtons { display: flex; gap: 30px; align-items: center; margin-top: 30; }
+
+.Button1, .Button2 { background: transparent; border: none; padding: 10px 0; font-family: "Poppins", sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; transition: var(--Transition); position: relative;}
+.Button1 {color: var(--Primary); padding: 10px 20px; border: 1px solid var(--Primary); border-radius: 4px;}
+.Button1 i { font-size: 1.3rem; transition: var(--Transition);}
+.Button1:hover { color: var(--Text-color); border: 1px solid var(--Text-color);}
+.Button1:hover i { transform: translateX(8px);}
+
+
+.Button2 { color: var(--Text-fade); padding: 10px 20px; border: 1px solid var(--Border-color); border-radius: 4px;}
+.Button2 i { font-size: 1.1rem; transition: var(--Transition);}
+.Button2:hover { color: var(--Text-color); border: 1px solid var(--Text-color);}
+.Button2:hover i { color: var(--Text-color);}
+
+.AboutMeSocialLinks { display: flex; gap: 20px; margin-top: 30px; justify-content: flex-start; align-items: center; }
+.AboutMeSocialLinks a { color: var(--Text-fade); font-size: 32px; transition: var(--Transition); display: flex; align-items: center; justify-content: center;}
+.AboutMeSocialLinks a:hover { color: var(--Primary); transform: translateY(-5px); }
+
+.Right-Top img { width: 300px; height: auto; filter: grayscale(1); opacity: 0.3; transition: var(--Transition); border-radius: 50%; }
+.AboutMeContainer:hover .Right-Top img { opacity: 0.8; filter: grayscale(0); }
+
+/* ========================================================================== SKILLS ========================================================================== */
+.SkillsIntro { padding: 30px 0 10px 0; }
+.SkillsIntro h2 { padding: 0 0 5px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; }
+.SkillsIntro p { color: var(--Text-fade); }
+
+.SkillsGrid {  display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.SkillBox { border: 1px solid var(--Border-color); padding: 25px; border-radius: 4px; transition: var(--Transition); }
+.SkillBox:hover { border-color: var(--Primary); background: rgba(255, 255, 255, 0.02); transform: translateY(-4px); }
+.SkillBox h3 { font-size: 0.85rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
+
+.SkillCard { display: flex; flex-wrap: wrap; gap: 10px; }
+.SkillCard span { font-family: 'Roboto Mono', monospace; font-size: 0.75rem; color: var(--Text-fade); border: 1px solid var(--Border-color); border-radius: 3px; padding: 4px 10px; transition: var(--Transition); }
+.SkillCard span:hover { transform: translateY(-3px); }
+
+.SkillLevel { display: flex; justify-content: center; gap: 30px; padding: 40px 0 30px 0;  }
+.SkillLevelContainer { display: flex; align-items: center; gap: 10px; }
+.SkillLevelContainer span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--Text-fade); }
+
+.Dot { height: 8px; width: 8px; border-radius: 50%; transition: var(--Transition); }
+.Dot.Good { background-color: var(--Primary); }
+.Dot.Intermediate { background-color: var(--Text-fade); opacity: 0.7; }
+.Dot.Learning { border: 1.5px dotted var(--Text-fade); background-color: transparent; opacity: 0.5; }
+
+.SkillGood { color: var(--Primary) !important; border-color: var(--Primary) !important; background: rgba(0, 143, 104, 0.05); }
+.SkillIntermediate { color: var(--Text-color); border-color: var(--Border-color); }
+.SkillLearning { color: var(--Text-fade) !important; border: 1px dashed var(--Border-color) !important; opacity: 0.7; }
+
+/* ========================================================================== PROJECTS ========================================================================== */
+.ProjectsIntro { padding: 30px 0 10px 0; }
+.ProjectsIntro h2 { padding: 0 0 5px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; }
+.ProjectsIntro p { color: var(--Text-fade); }
+
+.ProjectsGrid { display: flex; flex-direction: column; }
+.ViewAllLink { font-size: 0.75rem; font-weight: 800; color: var(--Text-fade); letter-spacing: 2px; display: flex; align-items: center; gap: 8px; transition: var(--Transition); }
+.ViewAllLink i { font-size: 1.1rem; transition: var(--Transition); }
+.ViewAllLink:hover { color: var(--Text-color); }
+.ViewAllLink:hover i { transform: translate(3px, -3px); }
+
+.ProjectCard { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; padding: 60px 0; transition: var(--Transition); }
+
+.ProjectImage { background: #000; overflow: hidden; border-radius: 2px; }
+.ProjectImage img { width: 100%; display: block; opacity: 0.3; filter: grayscale(1); transition: var(--Transition); }
+.ProjectCard:hover .ProjectImage img { opacity: 0.8; filter: grayscale(0); transform: scale(1.02); }
+
+.ProjectCardInfo h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
+.ProjectCardInfo p { color: var(--Text-fade); font-size: 0.95rem; margin-bottom: 30px; font-weight: 300; }
+
+.TechUsed { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+.TechUsed span { font-family: 'Roboto Mono', monospace; font-size: 0.65rem; color: var(--Text-fade); border: 1px solid var(--Border-color); border-radius: 3px; padding: 4px 10px; transition: var(--Transition); }
+.TechUsed span:hover { transform: translateY(-3px); }
+.ProjectLink a {  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--Primary); font-weight: 800; transition: var(--Transition); }
+.ProjectLink a:hover { color: var(--Text-color); }
+
+/* ========================================================================== EDUCATION & CAREER ========================================================================== */
+.EducationCarrerIntro { padding: 30px 0 10px 0; }
+.EducationCarrerIntro h2 { padding: 0 0 5px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; }
+.EducationCarrerIntro p { color: var(--Text-fade); }
+
+.TabsButtons { display: flex; gap: 20px; margin: 20px 0; }
+.TabItem { height: 0; overflow: hidden; opacity: 0; }
+.TabItem.Active { height: auto; opacity: 1; }
+.TabBtn { background: var(--Background-color); color: var(--Text-fade); padding: 10px 0; border: none; border-bottom: 2px solid transparent; }
+.TabBtn:not(.Active):hover { color: var(--Text-color); opacity: 0.8; }
+.TabBtn.Active { color: var(--Primary); border-bottom: 2px solid var(--Primary); }
+
+.ContentContainer { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.ECCard { padding: 25px; border: 1px solid var(--Border-color); border-radius: 4px; background: rgba(255, 255, 255, 0.01); transition: var(--Transition); display: flex; flex-direction: column; justify-content: space-between; }
+.ECCard p { color: var(--Text-fade); font-size: 0.9rem; }
+.ECCard:hover { border-color: var(--Primary); background: rgba(255, 255, 255, 0.02); transform: translateY(-4px); }
+
+.TitleGroup { display: flex; flex-direction: column; gap: 8px; }
+.TopInfo { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+.TopInfo h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; }
+
+.TypeBadge { font-family: 'Roboto Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: var(--Primary); border: 1px solid rgba(0, 143, 104, 0.2); padding: 2px 8px; border-radius: 3px; width: fit-content; }
+.Date { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--Text-fade); white-space: nowrap; opacity: 0.8; padding-top: 4px; }
+
+/* ========================================================================== CONTACT & FOOTER ========================================================================== */
+.ContactSimple { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.ContactHeadline { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; line-height: 1.2; letter-spacing: -1px; max-width: 700px; margin-bottom: 20px; }
+.ContactSub { color: var(--Text-fade); font-size: 1rem; max-width: 500px; margin-bottom: 50px; }
+
+.ContactLink { padding: 15px 30px; border: 1px solid var(--Border-color); border-radius: 2px; color: var(--Text-color); }
+.ContactLink i { font-size: 1.2rem; display: flex; align-items: center; transition: var(--Transition);}
+.ContactLink:hover { border-color: var(--Primary); background: rgba(255, 255, 255, 0.02); color: var(--Primary); }
+.ContactLink:hover i { transform: translate(5px, -5px); }
+
+.ContactFootnote { margin-top: 60px; font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--Text-fade); text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; }
+.ContactFootnote i { font-size: 1rem; display: flex; align-items: center; }
+
+footer { padding: 60px 0 40px 0; background-color: var(--Background-color); margin: 20px 0; }
+.FooterContainer { max-width: 1000px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+.FooterContent { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 25px; }
+.FooterSocials { display: flex; gap: 30px; }
+
+.FooterSocials a i { color: var(--Text-fade); font-size: 2.2rem; transition: var(--Transition); display: flex; align-items: center; justify-content: center; }
+.FooterSocials a:hover i { color: var(--Primary); transform: translateY(-5px); }
+
+.FooterCredits { display: flex; justify-content: center; align-items: center; gap: 8px; }
+.FooterCredits p { font-family: 'Roboto Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--Text-fade); }
+.Copyright { color: var(--Text-fade); font-size: 0.75rem; vertical-align: middle; margin-right: 2px; }
+
+/* ========================================================================== MODAL ========================================================================== */
+
+
+.Language{ font-family: 'Roboto Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: var(--Primary); border: 1px solid rgba(0, 143, 104, 0.2); padding: 2px 8px; border-radius: 3px; width: fit-content; }
+
+.ModalContainer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none;  align-items: center; justify-content: center; z-index: 9999;}
+.ModalContainer.Active { display: flex;}
+
+.ModalOverlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);}
+.Modal { position: relative; background: #0a0a0a; border: 1px solid var(--Border-color); width: 90%; max-width: 500px; padding: 40px; border-radius: 4px; z-index: 10000; transform: translateY(20px); transition: var(--Transition);}
+.ModalContainer.Active .Modal { transform: translateY(0);}
+.ModalHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;}
+.ModalHeader h3 { text-transform: uppercase; letter-spacing: 3px; font-size: 1rem; color: var(--Primary);}
+#CloseModal { background: transparent; border: none; color: var(--Text-fade); font-size: 1.5rem; cursor: pointer; transition: var(--Transition);}
+#CloseModal:hover { color: var(--Text-color);}
+.ModalBody p { color: var(--Text-fade); margin-bottom: 30px;}
+.ModalButtons {display: flex; flex-direction: column; gap: 15px;}
+.ResumeOption {display: flex; align-items: center; gap: 15px; padding: 15px 20px; border: 1px solid var(--Border-color); border-radius: 2px; color: var(--Text-color); transition: var(--Transition); font-weight: 600;}
+.ResumeOption i { font-size: 1.2rem; color: var(--Primary);}
+.ResumeOption:hover {border-color: var(--Primary); background: rgba(255, 255, 255, 0.02); transform: translateX(5px);}
+.Language{ font-family: 'Roboto Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: var(--Primary); border: 1px solid rgba(0, 143, 104, 0.2); padding: 2px 8px; border-radius: 3px; width: fit-content; }
+
+
+/* ========================================================================== RESPONSIVIDADE ========================================================================== */
+@media (max-width: 900px) { 
+    :root { --Section-Padding: 70px 0; } 
+    .AboutMeContainer { flex-direction: column-reverse; text-align: center; gap: 40px; } 
+    .AboutMeIntro h2 { font-size: clamp(2.2rem, 8vw, 3rem); } 
+    .AboutMeButtons { justify-content: center; flex-wrap: wrap; gap: 20px; } 
+    .AboutMeSocialLinks { justify-content: center; } 
+    .Right-Top img { width: 180px; opacity: 1; filter: grayscale(0); } 
+    .SkillsGrid, .ContentContainer { grid-template-columns: 1fr; width: 100%; } 
+    .ProjectCard { grid-template-columns: 1fr; text-align: center; } 
+    .TechUsed { justify-content: center; } 
+    .ECCard { width: 100%; } 
+}
+
+@media (max-width: 600px) { 
+    header { padding: 12px 0; } 
+    .NavLinks { padding: 0 5px; } 
+    .SectionLinks { display: flex; justify-content: space-between; gap: 4px; flex-wrap: nowrap; width: 100%; } 
+    .SectionLinks a { font-size: 0.55rem; padding: 8px 6px; letter-spacing: 0.5px; white-space: nowrap; } 
+    .AboutMeButtons { flex-direction: column; width: 100%; } 
+    .Button1, .Button2 { width: 100%; justify-content: center; border: 1px solid var(--Border-color); padding: 12px; } 
+    .EducationCarrerContainer { padding: 0 20px; width: 100%; overflow: hidden; } 
+    .ContentContainer { display: flex; flex-direction: column; gap: 20px; width: 100%; } 
+    .ECCard { width: 100%; margin: 0; box-sizing: border-box; padding: 20px; } 
+    .TopInfo { flex-direction: column; align-items: flex-start; gap: 10px; } 
+    .Date { white-space: normal; } 
+    .SkillLevel { align-items: left; gap: 15px;} 
+    .ContactHeadline { font-size: 1.6rem; } 
+    .ContactFootnote { padding: 0 10px; line-height: 1.4; align-items: flex-start; padding-top: 2px; }
+    .ContactFootnote i { margin-top: 2px;} 
+    .Modal {padding: 30px 20px;}
+}
+
+@media (max-width: 380px) { 
+    .SectionLinks a { font-size: 0.5rem; padding: 8px 3px; } 
+    .SectionLinks { gap: 2px; } 
+    .EducationCarrerContainer { padding: 0 15px; } }
+
+
